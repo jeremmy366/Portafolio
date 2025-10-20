@@ -1,0 +1,40 @@
+@import "tailwindcss";
+/* Hace que todo ocupe la altura total */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+}
+
+/* Fondo animado de estrellas */
+.stars {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background: transparent url("https://www.transparenttextures.com/patterns/stardust.png") repeat;
+    animation: moveStars 60s linear infinite;
+    opacity: 0.4;
+}
+
+/* Animación de movimiento */
+@keyframes moveStars {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 5000px 5000px;
+    }
+}
+
+/* Scrollbar oscuro (opcional) */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
