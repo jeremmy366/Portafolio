@@ -1,5 +1,8 @@
 ---
 import { Image } from "astro:assets";
+import kaliversusPreview from "../../assets/images/kaliversus-preview.png";
+import soapTrackingPreview from "../../assets/images/soap-tracking-preview.png";
+import dataCleaningPreview from "../../assets/images/data-cleaning-preview.png";
 ---
 
 <section id="projects" class="py-20 relative">
@@ -15,7 +18,7 @@ import { Image } from "astro:assets";
         <div class="relative glass rounded-2xl overflow-hidden card-hover">
           <div class="h-48 bg-gradient-to-br from-blue-600/20 to-purple-600/20 relative overflow-hidden">
             <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-            <Image src="/src/assets/images/kaliversus-preview.png" width="1600" height="900" loading="lazy" alt="Kaliversus" class="w-full h-full object-cover opacity-50" />
+            <Image src={kaliversusPreview} width="1600" height="900" loading="lazy" alt="Kaliversus" class="w-full h-full object-cover opacity-50" />
           </div>
           <div class="p-6">
             <h3 class="text-2xl font-bold mb-2 text-white">Kaliversus</h3>
@@ -69,7 +72,7 @@ import { Image } from "astro:assets";
           <div class="h-48 bg-gradient-to-br from-cyan-600/20 to-blue-600/20 relative overflow-hidden">
             <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
             <Image
-              src="/src/assets/images/soap-tracking-preview.png"
+              src={soapTrackingPreview}
               alt="API SOAP Tracking Service"
               width="1600"
               height="900"
@@ -116,7 +119,7 @@ import { Image } from "astro:assets";
           <div class="h-48 bg-gradient-to-br from-purple-600/20 to-pink-600/20 relative overflow-hidden">
             <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
             <Image
-              src="/src/assets/images/data-cleaning-preview.png"
+              src={dataCleaningPreview}
               width="1600"
               height="900"
               loading="lazy"
