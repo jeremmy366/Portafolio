@@ -25,7 +25,7 @@ Aquí podrás conocer más sobre mi experiencia, tecnologías que utilizo y cóm
 
 ## Enlace al portafolio
 
-[Ver portafolio en línea]([[https://jeremmy-portafolio.vercel.app/])
+[Ver portafolio en línea](https://jeremmy-portafolio.vercel.app/)
 
 ---
 
