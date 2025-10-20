@@ -1,7 +1,5 @@
 <div align="center">
-	<img src="src/assets/images/avatar.png" width="120" alt="Avatar" style="border-radius:50%;" />
-  
-	# Jeremmy Varela — Portafolio 💻
+	# Jeremmy Varela — Portafolio 
 </div>
 
 ¡Hola! Soy **Jeremmy Varela**, ingeniero en **Tecnologías de la Información y Comunicación (TIC)** y **desarrollador full stack** apasionado por crear soluciones digitales que aporten valor real a las personas y a las empresas.  
