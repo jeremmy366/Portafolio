@@ -1,11 +1,19 @@
 ---
 import { Image } from "astro:assets";
+import { getLangFromUrl } from "../../i18n/utils";
+import { translations } from "../../i18n/ui";
+
+const lang = getLangFromUrl(Astro.url);
+const t = translations[lang].skills;
 ---
 
 <section id="skills" class="py-20 relative">
   <div class="container mx-auto px-6">
     <h2 class="text-4xl md:text-5xl font-bold mb-16 text-center">
-      <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-600">Stack Tecnológico</span>
+      <span
+        class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-600"
+        >{t.title}</span
+      >
     </h2>
 
     <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">

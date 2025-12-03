@@ -1,0 +1,48 @@
+---
+import { languages } from "../i18n/ui";
+import { getLangFromUrl } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const currentPath = Astro.url.pathname;
+---
+
+<div class="flex gap-2">
+    {
+        Object.entries(languages).map(([label, name]) => {
+            let href;
+            if (label === "es") {
+                // If current is en, remove /en prefix. If result is empty, default to /
+                href =
+                    lang === "en"
+                        ? currentPath.replace(/^\/en/, "") || "/"
+                        : currentPath;
+            } else {
+                // If current is es, add /en prefix.
+                href =
+                    lang === "es"
+                        ? currentPath === "/"
+                            ? "/en/"
+                            : `/en${currentPath}`
+                        : currentPath;
+            }
+
+            // Avoid linking to same page if we are already there (optional, but good for UX)
+            // But for a switcher, usually we just render links.
+
+            const isActive = lang === label;
+            return (
+                <a
+                    href={href}
+                    class={`px-3 py-1 rounded-full text-sm font-medium transition-all duration-300 ${
+                        isActive
+                            ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg shadow-blue-500/25"
+                            : "bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white"
+                    }`}
+                    aria-label={`Switch to ${name}`}
+                >
+                    {label.toUpperCase()}
+                </a>
+            );
+        })
+    }
+</div>

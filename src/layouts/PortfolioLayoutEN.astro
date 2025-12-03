@@ -1,0 +1,152 @@
+---
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Portafolio | Jeremmy Varela</title>
+  </head>
+  <body class="relative min-h-screen text-white font-sans overflow-x-hidden">
+    <div class="stars"></div>
+
+    <header class="fixed top-0 w-full nav-blur z-50 transition-all duration-300">
+      <nav class="container mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+          <div class="text-2xl font-bold">
+            <span class="glitch" data-text="JV">JV</span>
+            <span class="text-blue-500">.</span>
+          </div>
+
+          <div class="flex items-center space-x-4">
+            <!-- Navegación principal -->
+            <div class="hidden md:flex space-x-8">
+              <a href="#hero" class="nav-link relative text-gray-300 hover:text-blue-400 transition-colors">
+                Inicio
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all hover:w-full"></span>
+              </a>
+              <a href="#about" class="nav-link relative text-gray-300 hover:text-blue-400 transition-colors">
+                Sobre mí
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all hover:w-full"></span>
+              </a>
+              <a href="#projects" class="nav-link relative text-gray-300 hover:text-blue-400 transition-colors">
+                Proyectos
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all hover:w-full"></span>
+              </a>
+              <a href="#skills" class="nav-link relative text-gray-300 hover:text-blue-400 transition-colors">
+                Skills
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all hover:w-full"></span>
+              </a>
+              <a href="#contact" class="nav-link relative text-gray-300 hover:text-blue-400 transition-colors">
+                Contacto
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all hover:w-full"></span>
+              </a>
+            </div>
+
+            <!-- Selector de idiomas -->
+            <div class="relative group">
+              <button class="flex items-center space-x-1 text-gray-300 hover:text-blue-400 transition-colors focus:outline-none">
+                <span class="text-sm">ES</span>
+                <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+
+              <div
+                class="absolute right-0 mt-2 w-24 bg-slate-800/95 backdrop-blur-lg rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50"
+              >
+                <div class="py-1">
+                  <a href="/" class="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-blue-400 transition-colors"> Español </a>
+                  <a href="/PortafolioLayoutEN" class="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-blue-400 transition-colors"> English </a>
+                </div>
+              </div>
+            </div>
+
+            <button id="menu-btn" class="md:hidden text-white">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Menú móvil -->
+        <div
+          id="mobile-menu"
+          class="fixed top-16 left-0 w-full bg-slate-950/95 backdrop-blur-lg flex flex-col items-center gap-8 py-8 z-40 transition-all duration-300 md:hidden opacity-0 pointer-events-none"
+        >
+          <a href="#hero" class="block text-lg text-gray-300 hover:text-blue-400 transition-colors">Inicio</a>
+          <a href="#about" class="block text-lg text-gray-300 hover:text-blue-400 transition-colors">Sobre mí</a>
+          <a href="#projects" class="block text-lg text-gray-300 hover:text-blue-400 transition-colors">Proyectos</a>
+          <a href="#skills" class="block text-lg text-gray-300 hover:text-blue-400 transition-colors">Skills</a>
+          <a href="#contact" class="block text-lg text-gray-300 hover:text-blue-400 transition-colors">Contacto</a>
+
+          <!-- Selector de idiomas para móvil -->
+          <div class="flex space-x-4 mt-4">
+            <a href="/" class="text-lg text-blue-400 transition-colors">ES</a>
+            <a href="/en" class="text-lg text-gray-300 hover:text-blue-400 transition-colors">EN</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="relative z-10 flex-1 w-full max-w-5xl mx-auto px-4 md:px-8 py-6 md:py-10">
+      <slot />
+    </main>
+
+    <footer class="py-8 border-t border-gray-800">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="text-gray-400 text-sm">© 2025 Jeremmy Varela. Todos los derechos reservados.</p>
+          <p class="text-gray-400 text-sm mt-4 md:mt-0">
+            Diseñado y desarrollado con <span class="text-red-500">❤️</span> y mucho ☕
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      let menuOpen = false;
+
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener("click", () => {
+          menuOpen = !menuOpen;
+          if (menuOpen) {
+            mobileMenu.classList.remove("opacity-0", "pointer-events-none");
+            mobileMenu.classList.add("opacity-100");
+          } else {
+            mobileMenu.classList.add("opacity-0", "pointer-events-none");
+            mobileMenu.classList.remove("opacity-100");
+          }
+        });
+
+        mobileMenu.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            menuOpen = false;
+            mobileMenu.classList.add("opacity-0", "pointer-events-none");
+            mobileMenu.classList.remove("opacity-100");
+          });
+        });
+
+        // Cerrar menú al hacer clic fuera - CORREGIDO
+        document.addEventListener("click", (e) => {
+          // Verificar que el target sea un elemento Node
+          if (menuOpen && e.target instanceof Node) {
+            const isClickInsideMenu = mobileMenu.contains(e.target);
+            const isClickOnMenuBtn = menuBtn.contains(e.target);
+
+            if (!isClickInsideMenu && !isClickOnMenuBtn) {
+              menuOpen = false;
+              mobileMenu.classList.add("opacity-0", "pointer-events-none");
+              mobileMenu.classList.remove("opacity-100");
+            }
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
