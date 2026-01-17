@@ -1,5 +1,10 @@
 ---
 import "../styles/global.css";
+import heartSvg from "../assets/images-svg/heart.svg?raw";
+import coffeeSvg from "../assets/images-svg/coffee.svg?raw";
+import { translations } from "../i18n/ui";
+
+const t = translations["en"];
 ---
 
 <!doctype html>
@@ -99,9 +104,12 @@ import "../styles/global.css";
     <footer class="py-8 border-t border-gray-800">
       <div class="container mx-auto px-6">
         <div class="flex flex-col md:flex-row justify-between items-center">
-          <p class="text-gray-400 text-sm">© 2025 Jeremmy Varela. Todos los derechos reservados.</p>
-          <p class="text-gray-400 text-sm mt-4 md:mt-0">
-            Diseñado y desarrollado con <span class="text-red-500">❤️</span> y mucho ☕
+          <p class="text-gray-400 text-sm">© 2025 Jeremmy Varela. {t.footer.rights}</p>
+          <p class="text-gray-400 text-sm mt-4 md:mt-0 flex items-center gap-1">
+            {t.footer.madeWith}
+            <span class="inline-block w-4 h-4 text-red-500" set:html={heartSvg} />
+            {t.footer.and}
+            <span class="inline-block w-3.5 h-3.5" set:html={coffeeSvg} />
           </p>
         </div>
       </div>

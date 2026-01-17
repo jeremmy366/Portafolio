@@ -4,13 +4,12 @@ import SEO from "../components/SEO.astro";
 import LanguageSwitcher from "../components/LanguageSwitcher.astro";
 import { getLangFromUrl } from "../i18n/utils";
 import { translations } from "../i18n/ui";
+import heartSvg from "../assets/images-svg/heart.svg?raw";
+import coffeeSvg from "../assets/images-svg/coffee.svg?raw";
 
 const lang = getLangFromUrl(Astro.url);
 const t = translations[lang];
-const {
-  title = "Jeremmy Varela | Portfolio",
-  description = t.hero.description,
-} = Astro.props;
+const { title = "Jeremmy Varela | Portfolio", description = t.hero.description } = Astro.props;
 ---
 
 <!doctype html>
@@ -21,9 +20,7 @@ const {
   <body class="relative min-h-screen text-white font-sans overflow-x-hidden">
     <div class="stars"></div>
 
-    <header
-      class="fixed top-0 w-full nav-blur z-50 transition-all duration-300"
-    >
+    <header class="fixed top-0 w-full nav-blur z-50 transition-all duration-300">
       <nav class="container mx-auto px-6 py-4">
         <div class="flex justify-between items-center">
           <div class="text-2xl font-bold">
@@ -34,50 +31,25 @@ const {
           <div class="flex items-center space-x-4">
             <!-- Navegación principal -->
             <div class="hidden md:flex space-x-8">
-              <a
-                href="#hero"
-                class="nav-link relative text-gray-300 hover:text-blue-400 transition-colors"
-              >
+              <a href="#hero" class="nav-link relative text-gray-300 hover:text-blue-400 transition-colors">
                 {t.nav.home}
-                <span
-                  class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all hover:w-full"
-                ></span>
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all hover:w-full"></span>
               </a>
-              <a
-                href="#about"
-                class="nav-link relative text-gray-300 hover:text-blue-400 transition-colors"
-              >
+              <a href="#about" class="nav-link relative text-gray-300 hover:text-blue-400 transition-colors">
                 {t.nav.about}
-                <span
-                  class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all hover:w-full"
-                ></span>
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all hover:w-full"></span>
               </a>
-              <a
-                href="#projects"
-                class="nav-link relative text-gray-300 hover:text-blue-400 transition-colors"
-              >
+              <a href="#projects" class="nav-link relative text-gray-300 hover:text-blue-400 transition-colors">
                 {t.nav.projects}
-                <span
-                  class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all hover:w-full"
-                ></span>
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all hover:w-full"></span>
               </a>
-              <a
-                href="#skills"
-                class="nav-link relative text-gray-300 hover:text-blue-400 transition-colors"
-              >
+              <a href="#skills" class="nav-link relative text-gray-300 hover:text-blue-400 transition-colors">
                 {t.nav.skills}
-                <span
-                  class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all hover:w-full"
-                ></span>
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all hover:w-full"></span>
               </a>
-              <a
-                href="#contact"
-                class="nav-link relative text-gray-300 hover:text-blue-400 transition-colors"
-              >
+              <a href="#contact" class="nav-link relative text-gray-300 hover:text-blue-400 transition-colors">
                 {t.nav.contact}
-                <span
-                  class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all hover:w-full"
-                ></span>
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all hover:w-full"></span>
               </a>
             </div>
 
@@ -85,17 +57,8 @@ const {
             <LanguageSwitcher />
 
             <button id="menu-btn" class="md:hidden text-white">
-              <svg
-                class="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h16m-7 6h7"></path>
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
               </svg>
             </button>
           </div>
@@ -106,38 +69,16 @@ const {
           id="mobile-menu"
           class="fixed top-16 left-0 w-full bg-slate-950/95 backdrop-blur-lg flex flex-col items-center gap-8 py-8 z-40 transition-all duration-300 md:hidden opacity-0 pointer-events-none"
         >
-          <a
-            href="#hero"
-            class="block text-lg text-gray-300 hover:text-blue-400 transition-colors"
-            >{t.nav.home}</a
-          >
-          <a
-            href="#about"
-            class="block text-lg text-gray-300 hover:text-blue-400 transition-colors"
-            >{t.nav.about}</a
-          >
-          <a
-            href="#projects"
-            class="block text-lg text-gray-300 hover:text-blue-400 transition-colors"
-            >{t.nav.projects}</a
-          >
-          <a
-            href="#skills"
-            class="block text-lg text-gray-300 hover:text-blue-400 transition-colors"
-            >{t.nav.skills}</a
-          >
-          <a
-            href="#contact"
-            class="block text-lg text-gray-300 hover:text-blue-400 transition-colors"
-            >{t.nav.contact}</a
-          >
+          <a href="#hero" class="block text-lg text-gray-300 hover:text-blue-400 transition-colors">{t.nav.home}</a>
+          <a href="#about" class="block text-lg text-gray-300 hover:text-blue-400 transition-colors">{t.nav.about}</a>
+          <a href="#projects" class="block text-lg text-gray-300 hover:text-blue-400 transition-colors">{t.nav.projects}</a>
+          <a href="#skills" class="block text-lg text-gray-300 hover:text-blue-400 transition-colors">{t.nav.skills}</a>
+          <a href="#contact" class="block text-lg text-gray-300 hover:text-blue-400 transition-colors">{t.nav.contact}</a>
         </div>
       </nav>
     </header>
 
-    <main
-      class="relative z-10 flex-1 w-full max-w-5xl mx-auto px-4 md:px-8 py-6 md:py-10"
-    >
+    <main class="relative z-10 flex-1 w-full max-w-5xl mx-auto px-4 md:px-8 py-6 md:py-10">
       <slot />
     </main>
 
@@ -147,9 +88,11 @@ const {
           <p class="text-gray-400 text-sm">
             © 2025 Jeremmy Varela. {t.footer.rights}
           </p>
-          <p class="text-gray-400 text-sm mt-4 md:mt-0">
-            Diseñado y desarrollado con <span class="text-red-500">❤️</span> y mucho
-            ☕
+          <p class="text-gray-400 text-sm mt-4 md:mt-0 flex items-center gap-1">
+            {t.footer.madeWith}
+            <span class="inline-block w-4 h-4 text-red-500" set:html={heartSvg} />
+            {t.footer.and}
+            <span class="inline-block w-3.5 h-3.5" set:html={coffeeSvg} />
           </p>
         </div>
       </div>
