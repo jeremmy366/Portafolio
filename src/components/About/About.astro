@@ -9,7 +9,7 @@ const t = translations[lang].about;
 <section id="about" class="py-20 relative">
   <div class="container mx-auto px-6">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-4xl md:text-5xl font-bold mb-16 text-center">
+      <h2 class="text-4xl md:text-5xl font-bold mb-16 text-center scroll-title">
         <span
           class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600"
           >{t.title}</span
@@ -18,25 +18,25 @@ const t = translations[lang].about;
 
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div class="space-y-6">
-          <div class="glass p-6 rounded-2xl card-hover">
+          <div class="glass p-6 rounded-2xl card-hover scroll-fade-left stagger-1">
             <h3 class="text-xl font-semibold text-blue-400 mb-3">{t.role1}</h3>
             <p class="text-gray-300 leading-relaxed">{t.desc1}</p>
           </div>
 
-          <div class="glass p-6 rounded-2xl card-hover">
+          <div class="glass p-6 rounded-2xl card-hover scroll-fade-left stagger-2">
             <h3 class="text-xl font-semibold text-purple-400 mb-3">
               {t.role2}
             </h3>
             <p class="text-gray-300 leading-relaxed">{t.desc2}</p>
           </div>
 
-          <div class="glass p-6 rounded-2xl card-hover">
+          <div class="glass p-6 rounded-2xl card-hover scroll-fade-left stagger-3">
             <h3 class="text-xl font-semibold text-cyan-400 mb-3">{t.role3}</h3>
             <p class="text-gray-300 leading-relaxed">{t.desc3}</p>
           </div>
         </div>
 
-        <div class="relative">
+        <div class="relative scroll-fade-right stagger-2">
           <div class="glass p-8 rounded-2xl">
             <div class="space-y-4">
               <div class="flex items-center space-x-4">

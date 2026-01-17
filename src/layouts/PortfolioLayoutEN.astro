@@ -155,6 +155,29 @@ const t = translations["en"];
           }
         });
       }
+
+      // ===== SCROLL REVEAL ANIMATIONS =====
+      const scrollRevealElements = document.querySelectorAll(
+        '.scroll-reveal, .scroll-fade-up, .scroll-fade-left, .scroll-fade-right, .scroll-scale, .scroll-blur, .scroll-rotate, .scroll-clip, .scroll-title'
+      );
+
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('revealed');
+            }
+          });
+        },
+        {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        }
+      );
+
+      scrollRevealElements.forEach((el) => {
+        revealObserver.observe(el);
+      });
     </script>
   </body>
 </html>
