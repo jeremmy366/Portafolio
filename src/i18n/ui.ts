@@ -17,8 +17,10 @@ export const translations = {
     hero: {
       greeting: "Hola, soy",
       role: "Full Stack Developer",
+      roles: ["Full Stack Developer", "Frontend Developer", "Backend Developer"],
       description: "Creando experiencias digitales únicas",
       cta: "Ver Proyectos",
+      downloadCV: "Descargar CV",
     },
     about: {
       title: "Sobre Mí",
@@ -71,8 +73,10 @@ export const translations = {
     hero: {
       greeting: "Hi, I'm",
       role: "Full Stack Developer",
+      roles: ["Full Stack Developer", "Frontend Developer", "Backend Developer"],
       description: "Creating unique digital experiences",
       cta: "View Projects",
+      downloadCV: "Download CV",
     },
     about: {
       title: "About Me",

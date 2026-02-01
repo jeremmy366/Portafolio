@@ -50,19 +50,26 @@ projects.sort(
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {
         projects.map((project, index) => (
-          <div class={`group relative scroll-fade-up stagger-${(index % 3) + 1}`}>
-            <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity" />
-            <div class="relative glass rounded-2xl overflow-hidden card-hover">
+          <div class={`group relative scroll-fade-up stagger-${(index % 3) + 1} project-card-wrapper`}>
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl blur-xl opacity-30 group-hover:opacity-60 transition-all duration-300" />
+            <div class="relative glass rounded-2xl overflow-hidden project-card" style="transform-style: preserve-3d;">
               <div class="h-48 bg-gradient-to-br from-blue-600/20 to-purple-600/20 relative overflow-hidden">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10" />
                 <Image
                   src={project.data.image}
                   width="1600"
                   height="900"
                   loading="lazy"
                   alt={project.data.title}
-                  class="w-full h-full object-cover opacity-50"
+                  class="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-110"
                 />
+                <div class="absolute top-3 right-3 z-20 flex gap-2">
+                  {project.data.tags.slice(0, 2).map((tag) => (
+                    <span class="px-2 py-1 bg-black/60 backdrop-blur-sm text-white rounded-md text-xs font-medium">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
               <div class="p-6">
                 <h3 class="text-2xl font-bold mb-2 text-white">
@@ -147,6 +154,47 @@ projects.sort(
           msg.classList.remove("hidden");
         });
       }
+
+      // 3D Tilt effect for project cards
+      const cards = document.querySelectorAll('.project-card');
+
+      cards.forEach(card => {
+        const cardElement = card as HTMLElement;
+
+        cardElement.addEventListener('mousemove', (e: MouseEvent) => {
+          const rect = cardElement.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+
+          const rotateX = (y - centerY) / 20;
+          const rotateY = (centerX - x) / 20;
+
+          cardElement.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+        });
+
+        cardElement.addEventListener('mouseleave', () => {
+          cardElement.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+        });
+      });
     </script>
   </div>
 </section>
+
+<style>
+  .project-card {
+    transition: transform 0.15s ease-out, box-shadow 0.3s ease;
+  }
+
+  .project-card:hover {
+    box-shadow:
+      0 25px 50px -12px rgba(59, 130, 246, 0.25),
+      0 0 30px rgba(139, 92, 246, 0.15);
+  }
+
+  .project-card-wrapper:hover .project-card {
+    border-color: rgba(59, 130, 246, 0.3);
+  }
+</style>
