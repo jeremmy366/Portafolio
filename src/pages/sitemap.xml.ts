@@ -1,5 +1,3 @@
-import { getCollection } from 'astro:content';
-
 export async function GET() {
     const baseUrl = 'https://jeremmy.dev'; // Replace with actual domain
     const pages = [
