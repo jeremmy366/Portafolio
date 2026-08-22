@@ -262,3 +262,40 @@ body {
 .btn-3d:active {
     transform: translateY(0);
 }
+
+/* ===== SKILLS CATEGORY STYLES ===== */
+
+.skills-category {
+    position: relative;
+}
+
+.category-header {
+    position: relative;
+}
+
+.category-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-header:hover .category-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+}
+
+.category-line {
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.category-header:hover .category-line {
+    opacity: 1;
+}

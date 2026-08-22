@@ -14,6 +14,8 @@ const projectsCollection = defineCollection({
       tags: z.array(z.string()),
       link: z.string().url().optional(),
       github: z.string().url().optional(),
+      playStore: z.string().url().optional(),
+      appStore: z.string().url().optional(),
       date: z.date(),
     }),
 });

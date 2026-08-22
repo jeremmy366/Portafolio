@@ -41,6 +41,8 @@ export const translations = {
       moreComing: "¡Más proyectos en camino!",
       preview: "Vista previa",
       code: "Código fuente en GitHub",
+      playStore: "Disponible en Google Play",
+      appStore: "Disponible en App Store",
     },
     skills: {
       title: "Stack Tecnológico",
@@ -48,7 +50,7 @@ export const translations = {
     contact: {
       title: "Hablemos",
       subtitle1: "¿Tienes un proyecto en mente?",
-      text1: "Estoy siempre abierto a discutir nuevos proyectos, ideas creativas o oportunidades para ser parte de tus visiones.",
+      text1: "Estoy siempre abierto a discutir nuevos proyectos, ideas creativas u oportunidades para ser parte de tus visiones.",
       subtitle2: "¿Quieres contactarme?",
       text2: "Estoy disponible para nuevos proyectos, colaboraciones y oportunidades. Elige tu método favorito para ponerte en contacto conmigo:",
       footer: "¡Estoy atento a tu mensaje y responderé lo antes posible!",
@@ -97,6 +99,8 @@ export const translations = {
       moreComing: "More projects coming soon!",
       preview: "Preview",
       code: "Source code on GitHub",
+      playStore: "Available on Google Play",
+      appStore: "Available on App Store",
     },
     skills: {
       title: "Tech Stack",
