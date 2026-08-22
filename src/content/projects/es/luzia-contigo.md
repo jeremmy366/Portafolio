@@ -1,6 +1,6 @@
 ---
 title: "Luzia Contigo"
-description: "Aplicación móvil de bienestar emocional y psicología con IA. Incluye chat inteligente con inteligencia artificial, directorio de psicólogos, diario emocional y recursos de apoyo. Desarrollada con Flutter y Firebase."
+description: "Aplicación móvil de bienestar emocional y psicología. Incluye chat inteligente con inteligencia artificial, directorio de psicólogos, diario emocional y recursos de apoyo. Desarrollada con Flutter y Firebase."
 image: "../../../assets/images/luzia-contigo-preview.png"
 tags: ["Flutter", "Firebase", "Dart", "AI"]
 link: "https://www.luziacontigo.com/"
