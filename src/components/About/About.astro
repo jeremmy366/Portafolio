@@ -38,71 +38,13 @@ const t = translations[lang].about;
 
         <div class="relative scroll-fade-right stagger-2">
           <div class="glass p-8 rounded-2xl">
-            <div class="space-y-4">
-              <div class="flex items-center space-x-4">
-                <div class="flex-1">
-                  <div class="flex justify-between mb-1">
-                    <span class="text-sm text-gray-400">{t.frontend}</span>
-                    <span class="text-sm text-blue-400">95%</span>
-                  </div>
-                  <div class="w-full bg-gray-700 rounded-full h-2">
-                    <div
-                      class="bg-gradient-to-r from-blue-400 to-cyan-400 h-2 rounded-full"
-                      style="width: 95%"
-                    >
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="flex items-center space-x-4">
-                <div class="flex-1">
-                  <div class="flex justify-between mb-1">
-                    <span class="text-sm text-gray-400">{t.backend}</span>
-                    <span class="text-sm text-purple-400">90%</span>
-                  </div>
-                  <div class="w-full bg-gray-700 rounded-full h-2">
-                    <div
-                      class="bg-gradient-to-r from-purple-400 to-pink-400 h-2 rounded-full"
-                      style="width: 90%"
-                    >
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="flex items-center space-x-4">
-                <div class="flex-1">
-                  <div class="flex justify-between mb-1">
-                    <span class="text-sm text-gray-400">{t.db}</span>
-                    <span class="text-sm text-green-400">85%</span>
-                  </div>
-                  <div class="w-full bg-gray-700 rounded-full h-2">
-                    <div
-                      class="bg-gradient-to-r from-green-400 to-teal-400 h-2 rounded-full"
-                      style="width: 85%"
-                    >
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="flex items-center space-x-4">
-                <div class="flex-1">
-                  <div class="flex justify-between mb-1">
-                    <span class="text-sm text-gray-400">{t.devops}</span>
-                    <span class="text-sm text-orange-400">75%</span>
-                  </div>
-                  <div class="w-full bg-gray-700 rounded-full h-2">
-                    <div
-                      class="bg-gradient-to-r from-orange-400 to-red-400 h-2 rounded-full"
-                      style="width: 75%"
-                    >
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <h3 class="text-xl font-semibold text-white mb-5">{t.evidenceTitle}</h3>
+            <dl class="space-y-5">
+              <div><dt class="text-blue-400 font-semibold">{t.frontend}</dt><dd class="text-sm text-gray-300 mt-1">{t.frontendEvidence}</dd></div>
+              <div><dt class="text-purple-400 font-semibold">{t.backend}</dt><dd class="text-sm text-gray-300 mt-1">{t.backendEvidence}</dd></div>
+              <div><dt class="text-green-400 font-semibold">{t.db}</dt><dd class="text-sm text-gray-300 mt-1">{t.dbEvidence}</dd></div>
+              <div><dt class="text-orange-400 font-semibold">{t.devops}</dt><dd class="text-sm text-gray-300 mt-1">{t.devopsEvidence}</dd></div>
+            </dl>
           </div>
 
           <!-- Decoración flotante -->

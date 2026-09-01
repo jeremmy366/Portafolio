@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Jeremmy Varela — Full Stack Developer</title>
+  <desc id="desc">Portfolio de Jeremmy Varela, desarrollador Full Stack en Quito, Ecuador.</desc>
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#07111f"/><stop offset=".55" stop-color="#11162e"/><stop offset="1" stop-color="#24103b"/></linearGradient><linearGradient id="accent" x1="0" x2="1"><stop stop-color="#60a5fa"/><stop offset="1" stop-color="#c084fc"/></linearGradient></defs>
+  <rect width="1200" height="630" fill="url(#bg)"/><circle cx="1060" cy="80" r="260" fill="#7c3aed" opacity=".18"/><circle cx="130" cy="590" r="260" fill="#0284c7" opacity=".16"/>
+  <text x="90" y="225" fill="#e5e7eb" font-family="Arial, sans-serif" font-size="34">PORTFOLIO</text>
+  <text x="90" y="330" fill="url(#accent)" font-family="Arial, sans-serif" font-size="76" font-weight="700">Jeremmy Varela</text>
+  <text x="90" y="405" fill="#f8fafc" font-family="Arial, sans-serif" font-size="43" font-weight="600">Full Stack Developer</text>
+  <text x="90" y="472" fill="#94a3b8" font-family="Arial, sans-serif" font-size="29">Angular · React · Node.js · NestJS · Flutter</text>
+  <text x="90" y="540" fill="#60a5fa" font-family="Arial, sans-serif" font-size="25">Quito, Ecuador</text>
+</svg>

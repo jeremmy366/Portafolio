@@ -9,7 +9,11 @@ import coffeeSvg from "../assets/images-svg/coffee.svg?raw";
 
 const lang = getLangFromUrl(Astro.url);
 const t = translations[lang];
-const { title = "Jeremmy Varela | Portfolio", description = t.hero.description } = Astro.props;
+const currentYear = new Date().getFullYear();
+const defaultDescription = lang === "es"
+  ? "Jeremmy Varela, ingeniero en TIC y desarrollador Full Stack en Quito, Ecuador. Proyectos con Angular, React, Flutter, Node.js, NestJS y Spring Boot."
+  : "Jeremmy Varela, ICT engineer and Full Stack developer in Quito, Ecuador. Projects with Angular, React, Flutter, Node.js, NestJS and Spring Boot.";
+const { title = "Jeremmy Varela | Full Stack Developer", description = defaultDescription } = Astro.props;
 ---
 
 <!doctype html>
@@ -23,10 +27,10 @@ const { title = "Jeremmy Varela | Portfolio", description = t.hero.description }
     <header class="fixed top-0 w-full nav-blur z-50 transition-all duration-300">
       <nav class="container mx-auto px-6 py-4">
         <div class="flex justify-between items-center">
-          <div class="text-2xl font-bold">
+          <a href="#hero" class="text-2xl font-bold" aria-label={lang === "es" ? "Ir al inicio" : "Go to home"}>
             <span class="glitch" data-text="JV">JV</span>
             <span class="text-blue-500">.</span>
-          </div>
+          </a>
 
           <div class="flex items-center space-x-4">
             <!-- Navegación principal -->
@@ -56,7 +60,7 @@ const { title = "Jeremmy Varela | Portfolio", description = t.hero.description }
             <!-- Selector de idiomas -->
             <LanguageSwitcher />
 
-            <button id="menu-btn" class="md:hidden text-white">
+            <button id="menu-btn" class="md:hidden text-white" type="button" aria-label={lang === "es" ? "Abrir menú de navegación" : "Open navigation menu"} aria-controls="mobile-menu" aria-expanded="false">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
               </svg>
@@ -86,7 +90,7 @@ const { title = "Jeremmy Varela | Portfolio", description = t.hero.description }
       <div class="container mx-auto px-6">
         <div class="flex flex-col md:flex-row justify-between items-center">
           <p class="text-gray-400 text-sm">
-            © 2025 Jeremmy Varela. {t.footer.rights}
+            © {currentYear} Jeremmy Varela. {t.footer.rights}
           </p>
           <p class="text-gray-400 text-sm mt-4 md:mt-0 flex items-center gap-1">
             {t.footer.madeWith}
@@ -104,8 +108,9 @@ const { title = "Jeremmy Varela | Portfolio", description = t.hero.description }
       let menuOpen = false;
 
       if (menuBtn && mobileMenu) {
-        menuBtn.addEventListener("click", () => {
-          menuOpen = !menuOpen;
+          menuBtn.addEventListener("click", () => {
+            menuOpen = !menuOpen;
+            menuBtn.setAttribute("aria-expanded", String(menuOpen));
           if (menuOpen) {
             mobileMenu.classList.remove("opacity-0", "pointer-events-none");
             mobileMenu.classList.add("opacity-100");

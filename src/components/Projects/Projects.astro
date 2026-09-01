@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import { getCollection, type CollectionEntry } from "astro:content";
 import { getLangFromUrl } from "../../i18n/utils";
 import { translations } from "../../i18n/ui";
+import { portfolio } from "../../config/portfolio";
 
 const lang = getLangFromUrl(Astro.url);
 const t = translations[lang].projects;
@@ -88,7 +89,7 @@ projects.sort(
                     <a
                       href={project.data.link}
                       target="_blank"
-                      rel="noopener"
+                      rel="noopener noreferrer"
                       class="text-blue-400 hover:text-blue-300 transition-colors"
                       title={t.preview}
                     >
@@ -112,7 +113,7 @@ projects.sort(
                     <a
                       href={project.data.github}
                       target="_blank"
-                      rel="noopener"
+                      rel="noopener noreferrer"
                       class="text-gray-400 hover:text-white transition-colors"
                       title={t.code}
                     >
@@ -130,7 +131,7 @@ projects.sort(
                     <a
                       href={project.data.playStore}
                       target="_blank"
-                      rel="noopener"
+                      rel="noopener noreferrer"
                       class="text-green-400 hover:text-green-300 transition-colors"
                       title={t.playStore}
                     >
@@ -148,7 +149,7 @@ projects.sort(
                     <a
                       href={project.data.appStore}
                       target="_blank"
-                      rel="noopener"
+                      rel="noopener noreferrer"
                       class="text-gray-300 hover:text-white transition-colors"
                       title={t.appStore}
                     >
@@ -170,27 +171,16 @@ projects.sort(
       }
     </div>
     <div class="flex flex-col items-center mt-12 scroll-fade-up stagger-4">
-      <button
-        id="show-more-projects"
+      <a
+        href={portfolio.github}
+        target="_blank"
+        rel="noopener noreferrer"
         class="px-8 py-4 glass rounded-full font-semibold text-lg border border-purple-500 hover:bg-blue-500/20 transition-all hover:scale-105"
-        type="button"
       >
         {t.viewMore}
-      </button>
-      <span
-        id="more-projects-message"
-        class="mt-4 text-blue-400 font-medium hidden">{t.moreComing}</span
-      >
+      </a>
     </div>
     <script>
-      const btn = document.getElementById("show-more-projects");
-      const msg = document.getElementById("more-projects-message");
-      if (btn && msg) {
-        btn.addEventListener("click", () => {
-          msg.classList.remove("hidden");
-        });
-      }
-
       // 3D Tilt effect for project cards
       const cards = document.querySelectorAll('.project-card');
 

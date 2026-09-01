@@ -5,14 +5,15 @@ import coffeeSvg from "../assets/images-svg/coffee.svg?raw";
 import { translations } from "../i18n/ui";
 
 const t = translations["en"];
+const currentYear = new Date().getFullYear();
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mi Portafolio | Jeremmy Varela</title>
+    <title>Jeremmy Varela | Full Stack Developer</title>
   </head>
   <body class="relative min-h-screen text-white font-sans overflow-x-hidden">
     <div class="stars"></div>
@@ -69,7 +70,7 @@ const t = translations["en"];
               </div>
             </div>
 
-            <button id="menu-btn" class="md:hidden text-white">
+            <button id="menu-btn" class="md:hidden text-white" type="button" aria-label="Open navigation menu" aria-controls="mobile-menu" aria-expanded="false">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
               </svg>
@@ -104,7 +105,7 @@ const t = translations["en"];
     <footer class="py-8 border-t border-gray-800">
       <div class="container mx-auto px-6">
         <div class="flex flex-col md:flex-row justify-between items-center">
-          <p class="text-gray-400 text-sm">© 2025 Jeremmy Varela. {t.footer.rights}</p>
+          <p class="text-gray-400 text-sm">© {currentYear} Jeremmy Varela. {t.footer.rights}</p>
           <p class="text-gray-400 text-sm mt-4 md:mt-0 flex items-center gap-1">
             {t.footer.madeWith}
             <span class="inline-block w-4 h-4 text-red-500" set:html={heartSvg} />
@@ -121,8 +122,9 @@ const t = translations["en"];
       let menuOpen = false;
 
       if (menuBtn && mobileMenu) {
-        menuBtn.addEventListener("click", () => {
-          menuOpen = !menuOpen;
+          menuBtn.addEventListener("click", () => {
+            menuOpen = !menuOpen;
+            menuBtn.setAttribute("aria-expanded", String(menuOpen));
           if (menuOpen) {
             mobileMenu.classList.remove("opacity-0", "pointer-events-none");
             mobileMenu.classList.add("opacity-100");

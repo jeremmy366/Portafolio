@@ -6,6 +6,7 @@ import { translations } from "../../i18n/ui";
 
 const lang = getLangFromUrl(Astro.url);
 const t = translations[lang].hero;
+const initialRole = t.roles[0];
 ---
 
 <!-- HERO SECTION -->
@@ -48,7 +49,7 @@ const t = translations[lang].hero;
       </div>
 
       <h1 class="text-5xl md:text-7xl font-bold mb-6 scroll-blur stagger-1">
-        {t.greeting}
+        {t.greeting}{" "}
         <span
           class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 neon-text"
           >Jeremmy Varela</span
@@ -56,7 +57,7 @@ const t = translations[lang].hero;
       </h1>
 
       <p class="text-xl md:text-2xl text-gray-400 mb-8 scroll-fade-up stagger-2">
-        <span id="typewriter" class="text-cyan-400 font-semibold"></span>
+        <span id="typewriter" class="text-cyan-400 font-semibold">{initialRole}</span>
         <span class="typewriter-cursor text-cyan-400">|</span>
         <span class="mx-2">•</span>
         <span>{t.description}</span>
@@ -83,8 +84,8 @@ const t = translations[lang].hero;
     </div>
 
     <!-- Data para el typewriter -->
-    <script is:inline define:vars={{ roles: t.roles }}>
-      window.typewriterRoles = roles;
+    <script is:inline define:vars={{ localizedRoles: t.roles }}>
+      window.typewriterRoles = localizedRoles;
     </script>
 
     <!-- Indicador de scroll animado -->
@@ -129,12 +130,15 @@ const t = translations[lang].hero;
 
   // Typewriter effect
   const typewriterElement = document.getElementById("typewriter");
-  const roles = (window as any).typewriterRoles || ["Full Stack Developer"];
+  const configuredRoles = (window as any).typewriterRoles;
+  const roles = Array.isArray(configuredRoles) && configuredRoles.length > 0
+    ? configuredRoles.filter((role): role is string => typeof role === "string" && role.trim().length > 0)
+    : ["Full Stack Developer"];
 
   if (typewriterElement) {
     const element = typewriterElement; // TypeScript now knows this is not null
     let roleIndex = 0;
-    let charIndex = 0;
+    let charIndex = roles[0].length;
     let isDeleting = false;
     let isPaused = false;
 
@@ -169,8 +173,11 @@ const t = translations[lang].hero;
       setTimeout(typeWriter, speed);
     }
 
-    // Start typewriter after a short delay
-    setTimeout(typeWriter, 500);
+    // Keep meaningful fallback text visible before JavaScript starts.
+    setTimeout(() => {
+      isPaused = true;
+      typeWriter();
+    }, 1500);
   }
 </script>
 
