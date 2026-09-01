@@ -1,6 +1,12 @@
 ---
 title: "Luzia Contigo"
-description: "Emotional well-being and psychology mobile app. Features intelligent AI chat, psychologist directory, emotional journal, and support resources. Built with Flutter and Firebase."
+description: "Emotional well-being mobile application combining digital support, real psychologists and AI-powered tools. As the team's Full Stack Developer, I turned product ideas into frontend and backend features, worked with Firebase, and performed testing to identify and fix defects before release."
+role: "Full Stack Developer · Team project"
+impact: "More than 100 downloads and positive ratings on Google Play."
+highlights:
+  - "Implemented functionality across Flutter, Firebase, frontend and backend."
+  - "Performed functional testing and fixed defects to improve stability."
+  - "Contributed to releasing a support solution combining psychologists and AI."
 image: "../../../assets/images/luzia-contigo-preview.png"
 tags: ["Flutter", "Firebase", "Dart", "AI"]
 link: "https://www.luziacontigo.com/"

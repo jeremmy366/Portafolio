@@ -47,6 +47,8 @@ export const translations = {
       code: "Código fuente en GitHub",
       playStore: "Disponible en Google Play",
       appStore: "Disponible en App Store",
+      contribution: "Mi contribución",
+      result: "Resultado",
     },
     skills: {
       title: "Stack Tecnológico",
@@ -109,6 +111,8 @@ export const translations = {
       code: "Source code on GitHub",
       playStore: "Available on Google Play",
       appStore: "Available on App Store",
+      contribution: "My contribution",
+      result: "Outcome",
     },
     skills: {
       title: "Tech Stack",

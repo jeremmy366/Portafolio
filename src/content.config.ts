@@ -10,6 +10,9 @@ const projectsCollection = defineCollection({
     z.object({
       title: z.string(),
       description: z.string(),
+      role: z.string().optional(),
+      impact: z.string().optional(),
+      highlights: z.array(z.string()).optional(),
       image: image(),
       tags: z.array(z.string()),
       link: z.string().url().optional(),
