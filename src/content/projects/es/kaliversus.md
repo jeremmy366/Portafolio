@@ -9,7 +9,7 @@ highlights:
   - "Eventos asíncronos con RabbitMQ y worker de correo; persistencia PostgreSQL-compatible con CockroachDB."
 image: "../../../assets/images/kaliversus-preview.png"
 tags: ["React", "NestJS", "RabbitMQ", "CockroachDB"]
-link: "https://kaliversus-moncayo-llumiquinga-vare.vercel.app/"
+link: "https://kaliversus.vercel.app/"
 github: "https://github.com/jeremmy366/Kaliversus"
 date: 2024-01-01
 ---
