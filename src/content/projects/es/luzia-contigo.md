@@ -2,7 +2,7 @@
 title: "Luzia Contigo"
 description: "Aplicación móvil de bienestar emocional que conecta acompañamiento digital, psicólogos reales y herramientas con inteligencia artificial. Como Full Stack Developer del equipo, convertí las ideas del producto en funcionalidades de frontend y backend, trabajé con Firebase y realicé pruebas para detectar y corregir errores antes de publicar."
 role: "Full Stack Developer · Proyecto en equipo"
-impact: "Más de 100 descargas y valoración positiva en Google Play."
+impact: "Publicada en Google Play y App Store, con más de 100 descargas en Android."
 highlights:
   - "Implementación de funcionalidades en Flutter, Firebase, frontend y backend."
   - "Pruebas funcionales y corrección de errores para mejorar la estabilidad."

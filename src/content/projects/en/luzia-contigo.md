@@ -2,7 +2,7 @@
 title: "Luzia Contigo"
 description: "Emotional well-being mobile application combining digital support, real psychologists and AI-powered tools. As the team's Full Stack Developer, I turned product ideas into frontend and backend features, worked with Firebase, and performed testing to identify and fix defects before release."
 role: "Full Stack Developer · Team project"
-impact: "More than 100 downloads and positive ratings on Google Play."
+impact: "Published on Google Play and the App Store, with more than 100 Android downloads."
 highlights:
   - "Implemented functionality across Flutter, Firebase, frontend and backend."
   - "Performed functional testing and fixed defects to improve stability."

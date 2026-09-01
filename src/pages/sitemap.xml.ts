@@ -1,5 +1,5 @@
 export async function GET() {
-    const baseUrl = 'https://jeremmy.dev'; // Replace with actual domain
+    const baseUrl = 'https://jeremmy-portafolio.vercel.app';
     const pages = [
         { url: '/', changefreq: 'weekly', priority: 1.0 },
         { url: '/en/', changefreq: 'weekly', priority: 1.0 },
